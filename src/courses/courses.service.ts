@@ -8,7 +8,7 @@ export class CoursesService {
             id: 1,
             name: 'Fundamentos do Framework NestJS',
             description: 'Fundamentos do Framework NestJS',
-            tags: ['Node.js', 'NestJS', 'Javascript'],
+            tags: ['Node.js', 'NestJS', 'Javascriptt'],
             
 
         }
