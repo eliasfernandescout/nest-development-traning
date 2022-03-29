@@ -1,9 +1,9 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { Course } from './entities/course.entity';
+import { CourseEntity } from './entities/course.entity';
 
 @Injectable()
 export class CoursesService {
-    private courses: Course[] = [
+    private courses: CourseEntity[] = [
         {
             id: 1,
             name: 'Fundamentos do Framework NestJS',
@@ -19,10 +19,10 @@ export class CoursesService {
     }
 
     findOne(id: string) {
-        const course = this.courses.find((course: Course) => course.id === Number(id))
+        const course = this.courses.find((course: CourseEntity) => course.id === Number(id))
 
         if (!course) {
-            throw new HttpException(`Course ID ${id} not found`, HttpStatus.NOT_FOUND)
+            throw new HttpException(`CourseEntity ID ${id} not found`, HttpStatus.NOT_FOUND)
         }
 
         return course;
@@ -35,13 +35,13 @@ export class CoursesService {
     }
 
     update(id: string, updateCourseDTO: any) {
-        const indexCourse = this.courses.findIndex((course: Course) => course.id === Number(id))
+        const indexCourse = this.courses.findIndex((course: CourseEntity) => course.id === Number(id))
         this.courses[indexCourse] = updateCourseDTO
 
     }
 
     delete(id: string) {
-        const indexCourse = this.courses.findIndex((course: Course) => course.id === Number(id))
+        const indexCourse = this.courses.findIndex((course: CourseEntity) => course.id === Number(id))
 
         if (indexCourse >= 0) {
             this.courses.splice(indexCourse, 1)
