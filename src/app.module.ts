@@ -10,7 +10,7 @@ import { CoursesModule } from './courses/courses.module';
     host: 'localhost',
     port: 5432,
     username: 'postgres',
-    password: 'docker',
+    password: 'dockerl',
     database: 'postgres',
     autoLoadEntities: true,
     synchronize: true
